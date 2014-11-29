@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu">
+    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" android:showAsAction="never" />
+
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/action_search"
+        android:title="@string/action_search"/>
+
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/action_probabilityCalculator"
+        android:title="@string/action_probabilityCalculator" />
+
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/action_teamBuilder"
+        android:title="@string/action_teamBuilder" />
+
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/action_teamViewer"
+        android:title="@string/action_teamViewer"/>
+
+    <!-- Search, should appear as action button -->
+    <item android:id="@+id/action_cardViewer"
+        android:title="@string/action_cardViewer" />
+
+
+</menu>

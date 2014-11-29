@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/mikeflood/Desktop/MyFirstApp/app/build/intermediates/pre-dexed/debug/Parse-1.7.1-21f63f43d6ffde1b781bb18eb8729d5184058b0d.jar"
+        jar="/Users/mikeflood/Desktop/MyFirstApp/app/libs/Parse-1.7.1.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="87c45f9f66da531a65f065ee32f603c7e6db1528"/>
+    <item
+        dex="/Users/mikeflood/Desktop/MyFirstApp/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-6b03005e532b527ff2f1509589674f9503cd7046.jar"
+        jar="/Users/mikeflood/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7"/>
+
+</pre-dex-items>

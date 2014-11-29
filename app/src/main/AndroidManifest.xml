@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zephyrworkshop.AegisProbabilityCalculator" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu"
+            android:label="AEGIS Companion" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.DiceCalculator.MainActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" />
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.DiceCalculator.DisplayMessageActivity"
+            android:label="@string/title_activity_display_message"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.DiceCalculator.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.CardViewer.CardViewerMenu"
+            android:label="@string/title_activity_card_viewer_menu"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" />
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.CardViewer.CardViewer"
+            android:label="@string/title_activity_card_viewer"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.CardViewer.CardViewerMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.CardViewerMenu" />
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.TeamBuilder.BuildTeamListView"
+            android:label="@string/title_activity_build_team_list_view"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" />
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.TeamViewer.TeamViewerMenu"
+            android:label="@string/title_activity_team_viewer_menu"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" />
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.TeamViewer.TeamViewer"
+            android:label="@string/title_activity_team_viewer"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.CardViewer.CardViewerMenu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.TeamViewerMenu" />
+        </activity>
+        <activity
+            android:name="com.zephyrworkshop.AegisProbabilityCalculator.AbilityIndex.AbilityIndexMenu"
+            android:label="@string/title_activity_ability_index_menu"
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" />
+        </activity>
+    </application>
+
+</manifest>
