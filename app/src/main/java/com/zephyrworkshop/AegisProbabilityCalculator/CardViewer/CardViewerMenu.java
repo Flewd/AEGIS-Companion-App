@@ -31,27 +31,7 @@ public class CardViewerMenu extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_viewer_menu);
 
-        cardsLV = (ListView) findViewById(R.id.cardsLV);
-
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("RobotCard");
-        query.fromLocalDatastore();
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
-                if (e == null) {
-                    cardList = parseObjects;
-                    populateListView();
-
-                } else {
-                    Log.d("score", "Error: " + e.getMessage());
-                }
-
-            }
-        });
-
-        cardsLV.setAdapter(adapter);
+        sortByName();
     }
 
     private void populateListView()
@@ -80,6 +60,112 @@ public class CardViewerMenu extends Activity {
         intent.putExtra("movement", robotObj.get("movement").toString());
         intent.putExtra("integrity", robotObj.get("integrity").toString());
         startActivity(intent);
+    }
+
+    public void sortByName()
+    {
+        cardsLV = (ListView) findViewById(R.id.cardsLV);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("RobotCard");
+        query.fromLocalDatastore();
+        query.addAscendingOrder("name");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
+                if (e == null) {
+                    cardList = parseObjects;
+                    populateListView();
+
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+
+            }
+        });
+
+        cardsLV.setAdapter(adapter);
+
+    }
+
+    public void sortByName(View view)
+    {
+        cardsLV = (ListView) findViewById(R.id.cardsLV);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("RobotCard");
+        query.fromLocalDatastore();
+        query.addAscendingOrder("name");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
+                if (e == null) {
+                    cardList = parseObjects;
+                    populateListView();
+
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+
+            }
+        });
+
+        cardsLV.setAdapter(adapter);
+
+    }
+    public void sortByType(View view)
+    {
+        cardsLV = (ListView) findViewById(R.id.cardsLV);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("RobotCard");
+        query.fromLocalDatastore();
+        query.addAscendingOrder("type");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
+                if (e == null) {
+                    cardList = parseObjects;
+                    populateListView();
+
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+
+            }
+        });
+
+        cardsLV.setAdapter(adapter);
+
+    }
+    public void sortByEnergy(View view)
+    {
+        cardsLV = (ListView) findViewById(R.id.cardsLV);
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("RobotCard");
+        query.fromLocalDatastore();
+        query.addAscendingOrder("energy");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
+                if (e == null) {
+                    cardList = parseObjects;
+                    populateListView();
+
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+
+            }
+        });
+
+        cardsLV.setAdapter(adapter);
+
     }
 
     @Override

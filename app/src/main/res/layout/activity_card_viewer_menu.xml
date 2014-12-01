@@ -11,11 +11,43 @@
         android:layout_height="wrap_content"
         android:id="@+id/cardsLV"
         tools:listitem="@android:layout/simple_list_item_checked"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:clickable="true"
         android:focusable="false"
-        android:focusableInTouchMode="false" />
+        android:focusableInTouchMode="false"
+        android:layout_below="@+id/sortNameBtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:id="@+id/sortNameBtn"
+        android:onClick="sortByName"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/sortTypeBtn"
+        android:layout_toEndOf="@+id/sortTypeBtn"
+        android:layout_toLeftOf="@+id/sortEnergyBtn"
+        android:layout_toStartOf="@+id/sortEnergyBtn" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type"
+        android:id="@+id/sortTypeBtn"
+        android:onClick="sortByType"
+        android:layout_above="@+id/cardsLV"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Energy"
+        android:id="@+id/sortEnergyBtn"
+        android:onClick="sortByEnergy"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/cardsLV"
+        android:layout_alignEnd="@+id/cardsLV" />
 
 </RelativeLayout>

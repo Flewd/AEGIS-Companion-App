@@ -6,10 +6,18 @@
     <string name="button_send">Send</string>
     <string name="action_settings">Settings</string>
     <string name="action_search">Search</string>
+
+     <!--Navigation strings-->
     <string name="action_cardViewer">Card Viewer</string>
     <string name="action_teamViewer">Team Viewer</string>
     <string name="action_teamBuilder">Team Builder</string>
     <string name="action_probabilityCalculator">Probability Calculator</string>
+
+    <!--Card viewer manu sorting-->
+    <string name="sort_name">Sort Name</string>
+    <string name="sort_energy">Sort Energy</string>
+    <string name="sort_type">Sort Type</string>
+
     <string name="title_activity_display_message">Results</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_activity_main_menu">activity_main_menu</string>
