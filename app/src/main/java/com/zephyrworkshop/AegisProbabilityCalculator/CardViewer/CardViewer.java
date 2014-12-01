@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.content.pm.ActivityInfo;
+import android.webkit.WebView;
 import android.util.Log;
 
 import com.parse.GetCallback;
@@ -21,17 +23,25 @@ public class CardViewer extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_card_viewer);
+//        setContentView(R.layout.activity_card_viewer);
+        setContentView(R.layout.web_view);
 
-        setText();
+        WebView webView = (WebView)findViewById(R.id.webView1);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("https://dl.dropboxusercontent.com/u/13338696/ARK-150.png");
+        webView.getSettings().setBuiltInZoomControls(true);
+//        webView.loadUrl("http://www.google.com");
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+//        setText();
     }
 
     private void setText()
     {
         Bundle extras = getIntent().getExtras();
 
-        TextView cardNameTV = (TextView) findViewById(R.id.cardNameTV);
-        cardNameTV.setText(extras.getString("cardName") + " " + extras.getString("type") + " " + extras.getString("energy") + " " + extras.getString("movement") + " " + extras.getString("integrity") );
+//        TextView cardNameTV = (TextView) findViewById(R.id.cardNameTV);
+//        cardNameTV.setText(extras.getString("cardName") + " " + extras.getString("type") + " " + extras.getString("energy") + " " + extras.getString("movement") + " " + extras.getString("integrity") );
 
         TextView cardDetail = (TextView) findViewById(R.id.nameTV);
         cardDetail.setText(extras.getString("cardName"));
