@@ -3,6 +3,7 @@ package com.zephyrworkshop.AegisProbabilityCalculator;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -45,7 +46,8 @@ public class activity_main_menu extends Activity {
             //         pullToLocalDataStore("AbilityIndex", false);
             ParseEnabled = true;
         }
-            //ParseObject.unpinAllInBackground();   //use to clear local data storage
+
+ //       ParseObject.unpinAllInBackground();   //use to clear local data storage
 
             navigationLV = (ListView) findViewById(R.id.navigationLV);
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
@@ -56,7 +58,7 @@ public class activity_main_menu extends Activity {
             adapter.add("Build Team");
             adapter.add("Team Viewer");
             adapter.add("Sync local data with server");
- //           adapter.add("Erase local data");
+            adapter.add("Erase local data");
 
             navigationLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -69,7 +71,7 @@ public class activity_main_menu extends Activity {
                     case 3: goToBuildTeamListView(); break;
                     case 4: goToTeamViewer(); break;
                     case 5: refreshLocalData(); break;
-                    case 6: clearLocalData(); break;
+        //            case 6: clearLocalData(); break;
                 }
 
             }
@@ -88,23 +90,24 @@ public class activity_main_menu extends Activity {
                     return;
                 }
 
-                // Release any objects previously pinned for this query.
-                ParseObject.unpinAllInBackground(ROBOT_CARD_LABEL, robotList, new DeleteCallback() {
-                    public void done(ParseException e) {
-                        if (e != null) {
-                            // There was some error.
-                            return;
-                        }
+                else {
+                    // Release any objects previously pinned for this query.
+                    ParseObject.unpinAllInBackground(ROBOT_CARD_LABEL, robotList, new DeleteCallback() {
+                        public void done(ParseException e) {
+                            if (e != null) {
+                                // There was some error.
+                                return;
+                            } else {
+                                // Add the latest results for this query to the cache.
+                                ParseObject.pinAllInBackground(ROBOT_CARD_LABEL, robotList);
 
-                        // Add the latest results for this query to the cache.
-                        ParseObject.pinAllInBackground(ROBOT_CARD_LABEL, robotList);
-
-                        if (finalPull == true)
-                        {
-                            Toast.makeText(getApplicationContext(), "" + "Local data is up to date", Toast.LENGTH_LONG).show();
+                                if (finalPull == true) {
+                                    Toast.makeText(getApplicationContext(), "" + "Local data is up to date", Toast.LENGTH_LONG).show();
+                                }
+                            }
                         }
-                    }
-                });
+                    });
+                }
             }
         });
     }

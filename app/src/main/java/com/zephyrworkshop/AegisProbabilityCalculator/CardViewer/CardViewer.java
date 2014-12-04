@@ -5,17 +5,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.content.pm.ActivityInfo;
 import android.webkit.WebView;
-import android.util.Log;
 
-import com.parse.GetCallback;
-import com.parse.Parse;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.zephyrworkshop.AegisProbabilityCalculator.R;
-
-import java.text.ParseException;
 
 
 public class CardViewer extends Activity {

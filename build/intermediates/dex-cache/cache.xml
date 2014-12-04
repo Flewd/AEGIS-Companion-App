@@ -2,14 +2,14 @@
 <pre-dex-items>
 
     <item
-        dex="/Users/mikeflood/AEGIS-Companion-App/app/build/intermediates/pre-dexed/debug/Parse-1.7.1-63b389f58a4f7a9e2e568e7cba4da1369a805542.jar"
-        jar="/Users/mikeflood/AEGIS-Companion-App/app/libs/Parse-1.7.1.jar"
+        dex="C:\Users\Mike\Documents\GitHub\AEGIS-Companion-App\app\build\intermediates\pre-dexed\debug\Parse-1.7.1-a2ff6a711080cd206c66eb6743ecd05dedad0584.jar"
+        jar="C:\Users\Mike\Documents\GitHub\AEGIS-Companion-App\app\libs\Parse-1.7.1.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="87c45f9f66da531a65f065ee32f603c7e6db1528"/>
     <item
-        dex="/Users/mikeflood/AEGIS-Companion-App/app/build/intermediates/pre-dexed/debug/bolts-android-1.1.2-6b03005e532b527ff2f1509589674f9503cd7046.jar"
-        jar="/Users/mikeflood/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.1.2/91c20388c9a45f62b5ed8fe0502bb76ff6251fc7/bolts-android-1.1.2.jar"
+        dex="C:\Users\Mike\Documents\GitHub\AEGIS-Companion-App\app\build\intermediates\pre-dexed\debug\bolts-android-1.1.2-cfb123fb69c54122cc38f1a14c6434d6a6e0d035.jar"
+        jar="C:\Users\Mike\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.1.2\91c20388c9a45f62b5ed8fe0502bb76ff6251fc7\bolts-android-1.1.2.jar"
         jumboMode="false"
         revision="20.0.0"
         sha1="91c20388c9a45f62b5ed8fe0502bb76ff6251fc7"/>

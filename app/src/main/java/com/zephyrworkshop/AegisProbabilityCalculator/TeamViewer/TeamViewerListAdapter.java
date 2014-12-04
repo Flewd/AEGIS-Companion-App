@@ -1,17 +1,15 @@
 package com.zephyrworkshop.AegisProbabilityCalculator.TeamViewer;
 
-import android.content.Intent;
-import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.app.Activity;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zephyrworkshop.AegisProbabilityCalculator.CardViewer.CardViewer;
 import com.zephyrworkshop.AegisProbabilityCalculator.R;
+
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -42,15 +40,24 @@ public class TeamViewerListAdapter extends ArrayAdapter<String> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View listItem = inflater.inflate(R.layout.team_viewer_list_item, parent, false);
 
-         TextView textView = (TextView) listItem.findViewById(R.id.nameTV);
-        textView.setText(names[position] + " " + types[position] + " " + energys[position] + " " + movements[position] + " " + integritys[position]);
+        TextView textView = (TextView) listItem.findViewById(R.id.nameTV);
+        textView.setText(names[position]);
 
-        //CheckBox checkBox = (CheckBox) listItem.findViewById(R.id.addToTeamCB);
-        //checkBox.setText(values[position]);
+        textView = (TextView) listItem.findViewById(R.id.energyTV);
+        textView.setText(energys[position]);
 
-        //  textView.setText(values[position]);
-        // change the icon for Windows and iPhone
-        //String s = values[position];
+        textView = (TextView) listItem.findViewById(R.id.movementTV);
+        textView.setText(movements[position]);
+
+        textView = (TextView) listItem.findViewById(R.id.integrityTV);
+        textView.setText(integritys[position]);
+
+
+        String unitPortraitName = names[position].replace("-", "");
+        unitPortraitName = unitPortraitName.toLowerCase();
+
+        ImageView imageView = (ImageView) listItem.findViewById(R.id.unitPortraitIV);
+        imageView.setImageResource(context.getApplicationContext().getResources().getIdentifier(unitPortraitName + "portrait","drawable", context.getPackageName()));
 
         return listItem;
     }

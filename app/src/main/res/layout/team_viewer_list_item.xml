@@ -1,13 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/unitPortraitIV"
+        android:src="@drawable/ark150portrait"
+        android:layout_alignBottom="@+id/integrityLBL"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-15dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TeamViwerItem"
+        android:text="UNIT NAME"
         android:id="@+id/nameTV"
-        android:layout_gravity="center_horizontal"
-        android:textSize="30dp" />
-</LinearLayout>
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/unitPortraitIV"
+        android:layout_toEndOf="@+id/unitPortraitIV" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:id="@+id/energyTV"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/energyLBL"
+        android:layout_above="@+id/movementLBL"
+        android:layout_alignLeft="@+id/movementTV"
+        android:layout_alignStart="@+id/movementTV" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Energy:"
+        android:id="@+id/energyLBL"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/unitPortraitIV"
+        android:layout_below="@+id/nameTV"
+        android:layout_toRightOf="@+id/unitPortraitIV"
+        android:layout_marginTop="13dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:id="@+id/movementTV"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/movementLBL"
+        android:layout_marginLeft="22dp"
+        android:layout_below="@+id/energyTV"
+        android:layout_toRightOf="@+id/movementLBL" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movement:"
+        android:id="@+id/movementLBL"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/unitPortraitIV"
+        android:layout_below="@+id/energyLBL"
+        android:layout_toRightOf="@+id/unitPortraitIV" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:id="@+id/integrityTV"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/energyTV"
+        android:layout_below="@+id/movementTV"
+        android:layout_alignLeft="@+id/movementTV"
+        android:layout_alignStart="@+id/movementTV" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Integrity:"
+        android:id="@+id/integrityLBL"
+        android:textSize="20dp"
+        android:layout_toEndOf="@+id/unitPortraitIV"
+        android:layout_below="@+id/movementTV"
+        android:layout_toStartOf="@+id/integrityTV"
+        android:layout_toLeftOf="@+id/integrityTV" />
+</RelativeLayout>
