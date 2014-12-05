@@ -2,6 +2,7 @@ package com.zephyrworkshop.AegisProbabilityCalculator.CardViewer;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -20,7 +21,15 @@ public class CardViewer extends Activity {
 
         WebView webView = (WebView)findViewById(R.id.webView1);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.loadUrl("https://dl.dropboxusercontent.com/u/13338696/ARK-150.png");
+
+
+        Bundle extras = getIntent().getExtras();
+        extras.getString("cardName");
+
+        String url = "https://dl.dropboxusercontent.com/u/13338696/AEGIS%20companion%20cards/" + extras.getString("cardName")  + ".png";
+        webView.loadUrl(url);
+
+
         webView.getSettings().setBuiltInZoomControls(true);
 //        webView.loadUrl("http://www.google.com");
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

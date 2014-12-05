@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.zephyrworkshop.AegisProbabilityCalculator.CardViewer.CardViewer;
@@ -39,6 +40,7 @@ public class TeamViewer extends Activity {
     String[] energys = new String[5];
     String[] movements = new String[5];
     String[] integritys = new String[5];
+    ParseFile[] unitPortraits = new ParseFile[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,11 +88,12 @@ public class TeamViewer extends Activity {
                            energys[unitCount] = parseObjects.get(i).get("energy").toString();
                            movements[unitCount] = parseObjects.get(i).get("movement").toString();
                            integritys[unitCount] = parseObjects.get(i).get("integrity").toString();
+                           unitPortraits[unitCount] = parseObjects.get(i).getParseFile("portraitIMG");
                            unitCount++;
                        }
                     }
 
-                    setupAdapter(names,types,energys,movements,integritys);
+                    setupAdapter(names,types,energys,movements,integritys,unitPortraits);
 
 
                 } else {
@@ -112,9 +115,9 @@ public class TeamViewer extends Activity {
         startActivity(intent);
     }
 
-    void setupAdapter(String[] names, String[] types, String[] energys, String[] movements, String[] integritys)
+    void setupAdapter(String[] names, String[] types, String[] energys, String[] movements, String[] integritys, ParseFile[] unitPortraits)
     {
-        adapter  = new TeamViewerListAdapter(this, names,types, energys,movements,integritys);
+        adapter  = new TeamViewerListAdapter(this, names,types, energys,movements,integritys,unitPortraits);
         unitsLV.setAdapter(adapter);
     }
 
