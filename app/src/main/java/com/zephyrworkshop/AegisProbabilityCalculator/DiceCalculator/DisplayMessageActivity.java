@@ -2,6 +2,8 @@ package com.zephyrworkshop.AegisProbabilityCalculator.DiceCalculator;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Debug;
+import android.text.LoginFilter;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
@@ -17,6 +19,8 @@ import java.text.DecimalFormat;
 import java.util.Random;
 
 public class DisplayMessageActivity extends Activity {
+
+    int totalCrit = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,7 @@ public class DisplayMessageActivity extends Activity {
 
         int accuracy = Integer.parseInt(extras.getString("accuracy"));
         int damage = Integer.parseInt(extras.getString("damage"));
+        int critValue = Integer.parseInt(extras.getString("critValue"));
 
         TextView textView2 = (TextView) findViewById(R.id.textView2);
         DecimalFormat df = new DecimalFormat(("#0.00"));
@@ -53,7 +58,8 @@ public class DisplayMessageActivity extends Activity {
                 textView.setText("Dice count: " + numDice +
                                 "\nAccuracy: " + accuracy +
                                 "\nDamage: " + damage +
-                                "\nAverage of 500 rolls: " + simulateDiceRolls(damage,numDice,accuracy));
+                                "\nAverage of 500 rolls: " + simulateDiceRolls(damage,numDice,accuracy,critValue) +
+                                "\nAverage crit damage: " + totalCrit/500);
 
                 ListView resultsLV = (ListView) findViewById(R.id.resultsLV);
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
@@ -73,7 +79,7 @@ public class DisplayMessageActivity extends Activity {
     }
 
 
-    private int simulateDiceRolls(int damagePerHit,int dice, int accuracy) {
+    private int simulateDiceRolls(int damagePerHit,int dice, int accuracy, int critValue) {
 
         int maximum = 6;
         int minimum = 1;
@@ -81,17 +87,24 @@ public class DisplayMessageActivity extends Activity {
         Random rn = new Random();
 
         int totalHits = 0;
+        int critDamage = 0;
         for(int i = 0; i < 500; i++) {
             for(int d = 0; d <= dice;d++)
             {
                 int randomNum =  rn.nextInt(range) + minimum;
-                if(randomNum >= accuracy) {
-                totalHits++;
+                if(randomNum >= accuracy)
+                {
+                    totalHits++;
+                }
+
+                if(randomNum == accuracy)
+                {
+                    critDamage += 1 * critValue;
                 }
             }
         }
-
-        return (totalHits * damagePerHit) /500;
+        totalCrit = critDamage;
+        return ((totalHits * damagePerHit) + critDamage) /500;
     }
 
 /*

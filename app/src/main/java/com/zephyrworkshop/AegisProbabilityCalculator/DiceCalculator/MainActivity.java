@@ -2,6 +2,7 @@ package com.zephyrworkshop.AegisProbabilityCalculator.DiceCalculator;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
@@ -56,6 +57,9 @@ public class MainActivity extends Activity {
         EditText damageET = (EditText) findViewById(R.id.damageET);
         String damage = damageET.getText().toString();
 
+        EditText critValueET = (EditText) findViewById(R.id.critValueET);
+        String critValue = critValueET.getText().toString();
+
         if(numDice.length() == 0){
             numDice = "1";
         }
@@ -65,12 +69,16 @@ public class MainActivity extends Activity {
         if(damage.length() == 0) {
             damage = "1";
         }
+        if(critValue.length() == 0) {
+            critValue = "0";
+        }
 
         Intent intent = new Intent(this, DisplayMessageActivity.class);
 
         intent.putExtra("numDice",numDice );
         intent.putExtra("accuracy",accuracy );
         intent.putExtra("damage",damage );
+        intent.putExtra("critValue",critValue );
 
         CheckBox christmasTreeCB = (CheckBox) findViewById(R.id.ChristmasTreeCB);
         intent.putExtra("christmasTree", christmasTreeCB.isChecked());

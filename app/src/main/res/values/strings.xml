@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AEGIS Probability Calculator</string>
+    <string name="app_name">AEGIS Companion</string>
     <string name="edit_message">Enter a message.</string>
     <string name="button_send">Send</string>
     <string name="action_settings">Settings</string>
@@ -20,14 +20,15 @@
 
     <string name="title_activity_display_message">Results</string>
     <string name="hello_world">Hello world!</string>
-    <string name="title_activity_activity_main_menu">activity_main_menu</string>
-    <string name="title_activity_card_viewer_menu">CardViewerMenu</string>
-    <string name="title_activity_card_viewer">CardViewer</string>
-    <string name="title_activity_unit_check_box_item">UnitCheckBoxItem</string>
-    <string name="title_activity_build_team_list_view">BuildTeamListView</string>
-    <string name="title_activity_team_viewer_menu">TeamViewerMenu</string>
-    <string name="title_activity_team_viewer">TeamViewer</string>
+    <string name="title_activity_activity_main_menu">Main Menu</string>
+    <string name="title_activity_activity_main_activity">Dice Calculator</string>
+    <string name="title_activity_card_viewer_menu">Card Viewer</string>
+    <string name="title_activity_card_viewer">Card Viewer</string>
+    <string name="title_activity_unit_check_box_item">Unit CheckBox Item</string>
+    <string name="title_activity_build_team_list_view">Build Team</string>
+    <string name="title_activity_team_viewer_menu">Team Viewer</string>
+    <string name="title_activity_team_viewer">Team Viewer</string>
     <string name="title_activity_action_bar">ActionBar</string>
-    <string name="title_activity_ability_index_menu">AbilityIndexMenu</string>
+    <string name="title_activity_ability_index_menu">Ability Index</string>
 
 </resources>

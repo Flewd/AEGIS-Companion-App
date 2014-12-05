@@ -30,22 +30,22 @@
         android:id="@+id/button"
         android:text="Calculate"
         android:onClick="sendMessage"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/ChristmasTreeCB"
-        android:layout_alignRight="@+id/accuracyET"
-        android:layout_alignEnd="@+id/accuracyET"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/critValueET"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/ChristmasTreeCB"
+        android:layout_alignEnd="@+id/ChristmasTreeCB" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="All dice required for hit"
         android:id="@+id/ChristmasTreeCB"
-        android:layout_below="@+id/damageET"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp" />
+        android:layout_toEndOf="@+id/critValueET"
+        android:layout_above="@+id/button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <EditText
         android:hint="Damage"
@@ -54,6 +54,16 @@
         android:id="@+id/damageET"
         android:inputType="number"
         android:layout_below="@+id/accuracyET"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:hint="Crit Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/critValueET"
+        android:inputType="number"
+        android:layout_below="@+id/damageET"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

@@ -58,7 +58,7 @@ public class activity_main_menu extends Activity {
             adapter.add("Build Team");
             adapter.add("Team Viewer");
             adapter.add("Sync local data with server");
-            adapter.add("Erase local data");
+      //      adapter.add("Erase local data");
 
             navigationLV.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -71,7 +71,7 @@ public class activity_main_menu extends Activity {
                     case 3: goToBuildTeamListView(); break;
                     case 4: goToTeamViewer(); break;
                     case 5: refreshLocalData(); break;
-        //            case 6: clearLocalData(); break;
+                    case 6: clearLocalData(); break;
                 }
 
             }

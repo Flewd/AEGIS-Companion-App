@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name="com.zephyrworkshop.AegisProbabilityCalculator.DiceCalculator.MainActivity"
-            android:label="@string/app_name"
+            android:label="@string/title_activity_activity_main_activity"
             android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -66,7 +66,8 @@
         <activity
             android:name="com.zephyrworkshop.AegisProbabilityCalculator.TeamBuilder.BuildTeamListView"
             android:label="@string/title_activity_build_team_list_view"
-            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" >
+            android:parentActivityName="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu"
+            android:windowSoftInputMode="stateHidden" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.zephyrworkshop.AegisProbabilityCalculator.activity_main_menu" />
